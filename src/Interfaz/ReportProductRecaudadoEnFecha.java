@@ -214,11 +214,11 @@ public class ReportProductRecaudadoEnFecha extends javax.swing.JDialog {
         }
 
         private void calcularActionPerformed(java.awt.event.ActionEvent evt) {
-                this.product = ControllerSales.getInstancia()
+                this.product = ControllerSales.getInstance()
                                 .getIncomeByProduct(this.date.getCurrent().getTime());
                 if (this.product != null) {
                         this.total.setText(
-                                        ControllerSales.getInstancia().getTotalIncomeByProduct(
+                                        ControllerSales.getInstance().getTotalIncomeByProduct(
                                                         this.date.getCurrent().getTime())
                                                         + "");
                         this.nombre.setText(this.product.getName());

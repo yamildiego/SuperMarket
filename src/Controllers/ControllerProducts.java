@@ -11,12 +11,12 @@ public class ControllerProducts {
     private static ControllerProducts instance;
     private List<Product> listProducts = new ArrayList<Product>();
 
-    public static ControllerProducts getInstancia() {
+    public static ControllerProducts getInstance() {
 
         if (ControllerProducts.instance == null)
             ControllerProducts.instance = new ControllerProducts();
 
-        return (ControllerProducts.instance);
+        return ControllerProducts.instance;
     }
 
     public ControllerProducts() {
@@ -51,14 +51,14 @@ public class ControllerProducts {
     }
 
     public void loadProducts() {
-        List<Tax> list = new ArrayList<Tax>();
-        this.addProduct(10, "Sugar", 5.9, 20, 10, 200, list);
-        this.addProduct(11, "Tea", 4.2, 50, 40, 300, list);
-        this.addProduct(12, "Juice", 1.2, 1200, 1000, 5000, list);
-        this.addProduct(13, "Biscuit", 8.6, 20, 60, 500, list);
-        this.addProduct(14, "Milk", 6.6, 60, 40, 140, list);
-        this.addProduct(15, "Coca Coca", 10, 100, 200, 400, list);
-        this.addProduct(16, "Ginger Beer", 12, 100, 250, 800, list);
+        // List<Tax> list = new ArrayList<Tax>();
+        // this.addProduct(10, "Sugar", 5.9, 20, 10, 200, list);
+        // this.addProduct(11, "Tea", 4.2, 50, 40, 300, list);
+        // this.addProduct(12, "Juice", 1.2, 1200, 1000, 5000, list);
+        // this.addProduct(13, "Biscuit", 8.6, 20, 60, 500, list);
+        // this.addProduct(14, "Milk", 6.6, 60, 40, 140, list);
+        // this.addProduct(15, "Coca Coca", 10, 100, 200, 400, list);
+        // this.addProduct(16, "Ginger Beer", 12, 100, 250, 800, list);
 
     }
 

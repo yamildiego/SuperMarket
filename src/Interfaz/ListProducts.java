@@ -20,7 +20,7 @@ public class ListProducts extends javax.swing.JDialog {
 
     public ListProducts(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.model = new ModelTableProduct((ArrayList<Product>) ControllerProducts.getInstancia().listProducts());
+        this.model = new ModelTableProduct((ArrayList<Product>) ControllerProducts.getInstance().listProducts());
         initComponents();
         this.tablaProducts.getTableHeader().setReorderingAllowed(false);
         this.setLocationRelativeTo(parent);

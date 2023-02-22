@@ -205,7 +205,7 @@ public class FacturacionEnFecha extends javax.swing.JDialog {
 
         private void calcularActionPerformed(java.awt.event.ActionEvent evt) {
                 this.total.setText(
-                                Double.toString(ControllerSales.getInstancia()
+                                Double.toString(ControllerSales.getInstance()
                                                 .getTotal(this.date.getCurrent().getTime())));
         }
 

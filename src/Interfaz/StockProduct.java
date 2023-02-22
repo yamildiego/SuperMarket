@@ -215,7 +215,7 @@ public class StockProduct extends javax.swing.JDialog {
             return;
         }
         int code = Integer.parseInt(codeText);
-        this.product = ControllerProducts.getInstancia().findProduct(code);
+        this.product = ControllerProducts.getInstance().findProduct(code);
         if ((this.product == null)) {
             this.labelError.setText("No se encontro un Product con el code indicado.");
             this.btnAccept.setEnabled(false);
@@ -239,7 +239,7 @@ public class StockProduct extends javax.swing.JDialog {
             int code = Integer.parseInt(codeText);
             int stock = Integer.parseInt(stockText);
             int stockActual = Integer.parseInt(stockActualText);
-            this.product = ControllerProducts.getInstancia().findProduct(code);
+            this.product = ControllerProducts.getInstance().findProduct(code);
             if ((this.product == null)) {
                 this.labelError.setText("No se encontro un Product con el code indicado.");
             } else {
@@ -251,7 +251,7 @@ public class StockProduct extends javax.swing.JDialog {
                     this.labelError.setText("El campo Stock Entrante mas el Stock Actual superan el stock permitido.");
                     return;
                 } else {
-                    ControllerProducts.getInstancia().updateProduct(code, stock + stockActual);
+                    ControllerProducts.getInstance().updateProduct(code, stock + stockActual);
                 }
                 doClose(RET_CANCEL);
             }

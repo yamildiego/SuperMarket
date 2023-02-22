@@ -285,7 +285,7 @@ public class FacturacionEntreFechas extends javax.swing.JDialog {
                 this.error.setText(null);
                 Calendar calendar = new GregorianCalendar();
                 calendar.setTime(this.dateDesde.getCurrent().getTime());
-                this.total.setText(Double.toString(ControllerSales.getInstancia().getTotal(calendar.getTime(),
+                this.total.setText(Double.toString(ControllerSales.getInstance().getTotal(calendar.getTime(),
                                 this.dateHasta.getCurrent().getTime())));
         }
 

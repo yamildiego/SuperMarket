@@ -21,7 +21,7 @@ public class ListProductsStockMinimum extends javax.swing.JDialog {
     public ListProductsStockMinimum(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.model = new ModelTableProduct(
-                (ArrayList<Product>) ControllerProducts.getInstancia().listProductsStockLowMinimum());
+                (ArrayList<Product>) ControllerProducts.getInstance().listProductsStockLowMinimum());
         initComponents();
         this.tablaProductsStockMin.getTableHeader().setReorderingAllowed(false);
         this.setLocationRelativeTo(parent);

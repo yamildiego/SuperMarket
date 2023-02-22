@@ -299,7 +299,7 @@ public class CreateProduct extends javax.swing.JDialog {
                         this.error.setText("The code field is required.");
                         return;
                 }
-                if (ControllerProducts.getInstancia().findProduct(Integer.parseInt(this.code.getText())) != null) {
+                if (ControllerProducts.getInstance().findProduct(Integer.parseInt(this.code.getText())) != null) {
                         this.error.setText("Ya existe un product con el código ingresado.");
                         return;
                 }
@@ -355,7 +355,7 @@ public class CreateProduct extends javax.swing.JDialog {
                         listTax = null;
                 }
 
-                ControllerProducts.getInstancia().addProduct(code, this.name.getText(), price, stock, stockMin,
+                ControllerProducts.getInstance().addProduct(code, this.name.getText(), price, stock, stockMin,
                                 stockMax,
                                 listTax);
                 doClose(RET_OK);

@@ -12,15 +12,15 @@ import Model.Tax;
 
 public class ControllerSales {
 
-    private static ControllerSales instancia;
+    private static ControllerSales instance;
     private List<Sale> listSales = new ArrayList<Sale>();
 
-    public static ControllerSales getInstancia() {
+    public static ControllerSales getInstance() {
 
-        if (ControllerSales.instancia == null) {
-            ControllerSales.instancia = new ControllerSales();
+        if (ControllerSales.instance == null) {
+            ControllerSales.instance = new ControllerSales();
         }
-        return (ControllerSales.instancia);
+        return (ControllerSales.instance);
     }
 
     public void addSale(Date date, List<Line> listLineas) {
@@ -89,7 +89,7 @@ public class ControllerSales {
 
     public void cancelSale(List<Line> listLineas) {
         for (Line i : listLineas) {
-            ControllerProducts.getInstancia().updateStock(i.getProduct(), i.getQuantity());
+            ControllerProducts.getInstance().updateStock(i.getProduct(), i.getQuantity());
         }
     }
 

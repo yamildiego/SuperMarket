@@ -188,7 +188,7 @@ public class AddProduct extends javax.swing.JDialog {
         } else {
             this.error.setText(null);
             this.btnAdd.setEnabled(true);
-            this.line = ControllerSales.getInstancia().newLine(this.product,
+            this.line = ControllerSales.getInstance().newLine(this.product,
                     Integer.parseInt(this.quantity.getText()));
             this.doClose(RET_OK);
         }
@@ -209,7 +209,7 @@ public class AddProduct extends javax.swing.JDialog {
             this.btnAdd.setEnabled(false);
             return;
         }
-        this.product = ControllerProducts.getInstancia().findProduct(Integer.parseInt(this.code.getText()));
+        this.product = ControllerProducts.getInstance().findProduct(Integer.parseInt(this.code.getText()));
         if (this.product == null) {
             this.name.setText(null);
             this.error.setText("No product found with the code entered.");

@@ -7,8 +7,8 @@ public class App {
     }
 
     public static void main(String args[]) throws Exception {
-        ControllerProducts.getInstancia().loadProducts();
-        ControllerSales.getInstancia().loadSales();
-        new Menu().setVisible(true);
+        ControllerProducts.getInstance().loadProducts();
+        ControllerSales.getInstance().loadSales();
+        // new Menu().setVisible(true);
     }
 }

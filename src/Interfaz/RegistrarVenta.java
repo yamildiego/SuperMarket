@@ -39,7 +39,7 @@ public class RegistrarVenta extends javax.swing.JDialog {
                 int opcion = JOptionPane.showConfirmDialog(RegistrarVenta.this, "¿Seguro desea btnCancel la sale?",
                         "Advertencia", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
                 if (JOptionPane.YES_OPTION == opcion) {
-                    ControllerSales.getInstancia().cancelSale(RegistrarVenta.this.modelo.devolverLista());
+                    ControllerSales.getInstance().cancelSale(RegistrarVenta.this.modelo.devolverLista());
                     doClose(RET_CANCEL);
                 }
             }
@@ -180,7 +180,7 @@ public class RegistrarVenta extends javax.swing.JDialog {
     }
 
     private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {
-        ControllerSales.getInstancia().addSale(new Date(), this.modelo.devolverLista());
+        ControllerSales.getInstance().addSale(new Date(), this.modelo.devolverLista());
         doClose(RET_OK);
     }
 
@@ -188,7 +188,7 @@ public class RegistrarVenta extends javax.swing.JDialog {
         int opcion = JOptionPane.showConfirmDialog(this, "¿Seguro desea btnCancel la sale?", "Advertencia",
                 JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
         if (JOptionPane.YES_OPTION == opcion) {
-            ControllerSales.getInstancia().cancelSale(this.modelo.devolverLista());
+            ControllerSales.getInstance().cancelSale(this.modelo.devolverLista());
             doClose(RET_CANCEL);
         }
     }
@@ -197,7 +197,7 @@ public class RegistrarVenta extends javax.swing.JDialog {
         int opcion = JOptionPane.showConfirmDialog(this, "¿Seguro desea btnCancel la sale?", "Advertencia",
                 JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
         if (JOptionPane.YES_OPTION == opcion) {
-            ControllerSales.getInstancia().cancelSale(this.modelo.devolverLista());
+            ControllerSales.getInstance().cancelSale(this.modelo.devolverLista());
             doClose(RET_CANCEL);
         }
     }
@@ -208,7 +208,7 @@ public class RegistrarVenta extends javax.swing.JDialog {
         Line line = agregarProduct.getLine();
         if (line != null) {
             this.modelo.agregar(line);
-            ControllerProducts.getInstancia().updateStock(line.getProduct(), line.getQuantity() * -1);
+            ControllerProducts.getInstance().updateStock(line.getProduct(), line.getQuantity() * -1);
             this.actualizarImporte(line.subTotal());
         }
         agregarProduct.dispose();
@@ -221,7 +221,7 @@ public class RegistrarVenta extends javax.swing.JDialog {
             if (JOptionPane.YES_OPTION == opcion) {
                 Line line = (Line) this.modelo.devolver(this.tablaLines.getSelectedRow());
                 this.modelo.quitar(line);
-                ControllerProducts.getInstancia().updateStock(line.getProduct(), line.getQuantity());
+                ControllerProducts.getInstance().updateStock(line.getProduct(), line.getQuantity());
                 this.actualizarImporte(line.subTotal() * -1);
             }
         }
