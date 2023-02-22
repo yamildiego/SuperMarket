@@ -14,13 +14,13 @@ import Model.Product;
 
 public class ListProductsStockMinimum extends javax.swing.JDialog {
 
-    private ModelTablaProduct model;
+    private ModelTableProduct model;
     public static final int RET_CANCEL = 0;
     public static final int RET_OK = 1;
 
     public ListProductsStockMinimum(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.model = new ModelTablaProduct(
+        this.model = new ModelTableProduct(
                 (ArrayList<Product>) ControllerProducts.getInstancia().listProductsStockLowMinimum());
         initComponents();
         this.tablaProductsStockMin.getTableHeader().setReorderingAllowed(false);

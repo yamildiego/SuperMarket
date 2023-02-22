@@ -87,7 +87,7 @@ public class CreateProduct extends javax.swing.JDialog {
 
                 error.setForeground(new java.awt.Color(255, 0, 0));
 
-                code.setDocument(new LimitadorCaracteres());
+                code.setDocument(new CharacterLimiter());
 
                 name.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,11 +98,11 @@ public class CreateProduct extends javax.swing.JDialog {
                 price.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(
                                 new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,###.##"))));
 
-                stock.setDocument(new LimitadorCaracteres());
+                stock.setDocument(new CharacterLimiter());
 
-                stockMin.setDocument(new LimitadorCaracteres());
+                stockMin.setDocument(new CharacterLimiter());
 
-                stockMax.setDocument(new LimitadorCaracteres());
+                stockMax.setDocument(new CharacterLimiter());
 
                 btnCancel.setText("Cancel");
                 btnCancel.addActionListener(new java.awt.event.ActionListener() {

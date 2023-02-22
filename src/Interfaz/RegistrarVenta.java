@@ -12,14 +12,14 @@ import javax.swing.*;
 
 public class RegistrarVenta extends javax.swing.JDialog {
 
-    private ModeloTablaVenta modelo;
+    private ModelTableSale modelo;
     private double importeTotal = 0;
     public static final int RET_CANCEL = 0;
     public static final int RET_OK = 1;
 
     public RegistrarVenta(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.modelo = new ModeloTablaVenta();
+        this.modelo = new ModelTableSale();
         initComponents();
         String patron = "dd/MM/yyyy";
         SimpleDateFormat format = new SimpleDateFormat(patron);

@@ -77,7 +77,7 @@ public class StockProduct extends javax.swing.JDialog {
             }
         });
 
-        code.setDocument(new LimitadorCaracteres());
+        code.setDocument(new CharacterLimiter());
         code.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 codeFocusLost(evt);
@@ -94,7 +94,7 @@ public class StockProduct extends javax.swing.JDialog {
         stockActual.setFocusable(false);
         stockActual.setRequestFocusEnabled(false);
 
-        stock.setDocument(new LimitadorCaracteres());
+        stock.setDocument(new CharacterLimiter());
 
         labelError.setForeground(new java.awt.Color(255, 0, 0));
 

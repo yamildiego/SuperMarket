@@ -13,17 +13,17 @@ import Model.Line;
  *
  * @author Yamil
  */
-public class ModeloTablaVenta extends AbstractTableModel {
+public class ModelTableSale extends AbstractTableModel {
 
     private String[] columnas = { "Code", "Name", "Quantity", "Price" };
     private ArrayList<Line> rows = new ArrayList<Line>();
 
-    public ModeloTablaVenta(ArrayList<Line> list) {
+    public ModelTableSale(ArrayList<Line> list) {
         this.rows.addAll(list);
         fireTableDataChanged();
     }
 
-    public ModeloTablaVenta() {
+    public ModelTableSale() {
     }
 
     @Override

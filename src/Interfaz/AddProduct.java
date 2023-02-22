@@ -88,7 +88,7 @@ public class AddProduct extends javax.swing.JDialog {
 
         error.setForeground(new java.awt.Color(255, 0, 0));
 
-        code.setDocument(new LimitadorCaracteres());
+        code.setDocument(new CharacterLimiter());
         code.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 codeFocusLost(evt);
@@ -98,7 +98,7 @@ public class AddProduct extends javax.swing.JDialog {
         name.setEditable(false);
         name.setFocusable(false);
 
-        quantity.setDocument(new LimitadorCaracteres());
+        quantity.setDocument(new CharacterLimiter());
         quantity.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 quantityFocusLost(evt);

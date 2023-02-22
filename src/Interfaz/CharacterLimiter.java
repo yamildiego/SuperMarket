@@ -4,7 +4,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
-class LimitadorCaracteres extends PlainDocument {
+class CharacterLimiter extends PlainDocument {
 
     @Override
     public void insertString(int arg0, String arg1, AttributeSet arg2) throws BadLocationException {

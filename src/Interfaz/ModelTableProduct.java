@@ -9,17 +9,17 @@ import Model.Product;
  *
  * @author Yamil
  */
-public class ModelTablaProduct extends AbstractTableModel {
+public class ModelTableProduct extends AbstractTableModel {
 
     private String[] columnas = { "Code", "Name", "Minimum stock", "Stock", "Price" };
     private ArrayList<Product> rows = new ArrayList<Product>();
 
-    public ModelTablaProduct(ArrayList<Product> list) {
+    public ModelTableProduct(ArrayList<Product> list) {
         this.rows.addAll(list);
         fireTableDataChanged();
     }
 
-    public ModelTablaProduct() {
+    public ModelTableProduct() {
     }
 
     @Override

@@ -14,13 +14,13 @@ import Model.Product;
 
 public class ListProducts extends javax.swing.JDialog {
 
-    private ModelTablaProduct model;
+    private ModelTableProduct model;
     public static final int RET_CANCEL = 0;
     public static final int RET_OK = 1;
 
     public ListProducts(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.model = new ModelTablaProduct((ArrayList<Product>) ControllerProducts.getInstancia().listProducts());
+        this.model = new ModelTableProduct((ArrayList<Product>) ControllerProducts.getInstancia().listProducts());
         initComponents();
         this.tablaProducts.getTableHeader().setReorderingAllowed(false);
         this.setLocationRelativeTo(parent);
