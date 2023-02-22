@@ -43,7 +43,7 @@ public class ListProducts extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProducts = new javax.swing.JTable();
 
-        setTitle("Listado de products");
+        setTitle("Product list");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -51,7 +51,7 @@ public class ListProducts extends javax.swing.JDialog {
             }
         });
 
-        btnCancel.setText("Cerrar");
+        btnCancel.setText("Close");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);

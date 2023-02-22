@@ -13,7 +13,7 @@ import javax.swing.*;
 public class RegistrarVenta extends javax.swing.JDialog {
 
     private ModelTableSale modelo;
-    private double importeTotal = 0;
+    private double totalTotal = 0;
     public static final int RET_CANCEL = 0;
     public static final int RET_OK = 1;
 
@@ -24,7 +24,7 @@ public class RegistrarVenta extends javax.swing.JDialog {
         String patron = "dd/MM/yyyy";
         SimpleDateFormat format = new SimpleDateFormat(patron);
         this.date.setText(format.format(new Date()));
-        this.importe.setText(String.valueOf(this.importeTotal));
+        this.total.setText(String.valueOf(this.totalTotal));
         this.tablaLines.getTableHeader().setReorderingAllowed(false);
         this.setLocationRelativeTo(parent);
 
@@ -46,9 +46,9 @@ public class RegistrarVenta extends javax.swing.JDialog {
         });
     }
 
-    private void actualizarImporte(double valor) {
-        this.importeTotal += valor;
-        this.importe.setText(String.valueOf(this.importeTotal));
+    private void actualizartotal(double valor) {
+        this.totalTotal += valor;
+        this.total.setText(String.valueOf(this.totalTotal));
     }
 
     public int getReturnStatus() {
@@ -57,16 +57,16 @@ public class RegistrarVenta extends javax.swing.JDialog {
 
     private void initComponents() {
 
-        aceptar = new javax.swing.JButton();
+        btnAccept = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
-        agregar = new javax.swing.JButton();
-        eliminar = new javax.swing.JButton();
-        labelFecha = new javax.swing.JLabel();
+        btnAdd = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        labelDate = new javax.swing.JLabel();
         date = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        panel = new javax.swing.JScrollPane();
         tablaLines = new javax.swing.JTable();
-        labelImporte = new javax.swing.JLabel();
-        importe = new javax.swing.JLabel();
+        labelTotal = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Registrar sale");
@@ -77,10 +77,10 @@ public class RegistrarVenta extends javax.swing.JDialog {
             }
         });
 
-        aceptar.setText("Aceptar");
-        aceptar.addActionListener(new java.awt.event.ActionListener() {
+        btnAccept.setText("Accept");
+        btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aceptarActionPerformed(evt);
+                btnAcceptActionPerformed(evt);
             }
         });
 
@@ -91,32 +91,32 @@ public class RegistrarVenta extends javax.swing.JDialog {
             }
         });
 
-        agregar.setText("Add");
-        agregar.addActionListener(new java.awt.event.ActionListener() {
+        btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarActionPerformed(evt);
+                btnAddActionPerformed(evt);
             }
         });
 
-        eliminar.setText("Eliminar");
-        eliminar.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setText("btnDelete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
 
-        labelFecha.setText("Fecha de caja");
+        labelDate.setText("Cashier date");
 
         date.setEditable(false);
         date.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         tablaLines.setModel(this.modelo);
-        jScrollPane1.setViewportView(tablaLines);
+        panel.setViewportView(tablaLines);
 
-        labelImporte.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        labelImporte.setText("Importe total:");
+        labelTotal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labelTotal.setText("Total:");
 
-        importe.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        total.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,26 +125,26 @@ public class RegistrarVenta extends javax.swing.JDialog {
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jScrollPane1)
+                                        .addComponent(panel)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(agregar)
+                                                .addComponent(btnAdd)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(eliminar)
+                                                .addComponent(btnDelete)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
                                                         javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(labelFecha)
+                                                .addComponent(labelDate)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 70,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout
                                                 .createSequentialGroup()
-                                                .addComponent(labelImporte)
+                                                .addComponent(labelTotal)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(importe, javax.swing.GroupLayout.PREFERRED_SIZE, 250,
+                                                .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 250,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
                                                         175, Short.MAX_VALUE)
-                                                .addComponent(aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+                                                .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(btnCancel)))
@@ -154,32 +154,32 @@ public class RegistrarVenta extends javax.swing.JDialog {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(agregar)
-                                        .addComponent(eliminar)
+                                        .addComponent(btnAdd)
+                                        .addComponent(btnDelete)
                                         .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(labelFecha))
+                                        .addComponent(labelDate))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                                .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(importe, javax.swing.GroupLayout.PREFERRED_SIZE, 23,
+                                        .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 23,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                 .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE,
                                                         javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(aceptar, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                .addComponent(btnAccept, javax.swing.GroupLayout.DEFAULT_SIZE,
                                                         javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(labelImporte)))
+                                                .addComponent(labelTotal)))
                                 .addContainerGap()));
 
-        getRootPane().setDefaultButton(aceptar);
+        getRootPane().setDefaultButton(btnAccept);
 
         pack();
     }
 
-    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {
         ControllerSales.getInstance().addSale(new Date(), this.modelo.devolverLista());
         doClose(RET_OK);
     }
@@ -202,27 +202,27 @@ public class RegistrarVenta extends javax.swing.JDialog {
         }
     }
 
-    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {
-        AddProduct agregarProduct = new AddProduct(this, true);
-        agregarProduct.setVisible(true);
-        Line line = agregarProduct.getLine();
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {
+        AddProduct btnAddProduct = new AddProduct(this, true);
+        btnAddProduct.setVisible(true);
+        Line line = btnAddProduct.getLine();
         if (line != null) {
-            this.modelo.agregar(line);
+            this.modelo.add(line);
             ControllerProducts.getInstance().updateStock(line.getProduct(), line.getQuantity() * -1);
-            this.actualizarImporte(line.subTotal());
+            this.actualizartotal(line.subTotal());
         }
-        agregarProduct.dispose();
+        btnAddProduct.dispose();
     }
 
-    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {
         if (this.tablaLines.getSelectedRow() != -1) {
             int opcion = JOptionPane.showConfirmDialog(this, "¿Seguro desea quitar el product?", "Advertencia",
                     JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (JOptionPane.YES_OPTION == opcion) {
-                Line line = (Line) this.modelo.devolver(this.tablaLines.getSelectedRow());
-                this.modelo.quitar(line);
+                Line line = (Line) this.modelo.get(this.tablaLines.getSelectedRow());
+                this.modelo.remove(line);
                 ControllerProducts.getInstance().updateStock(line.getProduct(), line.getQuantity());
-                this.actualizarImporte(line.subTotal() * -1);
+                this.actualizartotal(line.subTotal() * -1);
             }
         }
     }
@@ -233,15 +233,15 @@ public class RegistrarVenta extends javax.swing.JDialog {
         dispose();
     }
 
-    private javax.swing.JButton aceptar;
-    private javax.swing.JButton agregar;
+    private javax.swing.JButton btnAccept;
+    private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnCancel;
-    private javax.swing.JButton eliminar;
+    private javax.swing.JButton btnDelete;
     private javax.swing.JTextField date;
-    private javax.swing.JLabel importe;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelFecha;
-    private javax.swing.JLabel labelImporte;
+    private javax.swing.JLabel total;
+    private javax.swing.JScrollPane panel;
+    private javax.swing.JLabel labelDate;
+    private javax.swing.JLabel labelTotal;
     private javax.swing.JTable tablaLines;
     private int returnStatus = RET_CANCEL;
 }

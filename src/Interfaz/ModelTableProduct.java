@@ -73,21 +73,21 @@ public class ModelTableProduct extends AbstractTableModel {
         return product;
     }
 
-    public void agregar(Product product) {
+    public void add(Product product) {
         this.rows.add(product);
         fireTableDataChanged();
     }
 
-    public void quitar(Product product) {
+    public void remove(Product product) {
         this.rows.remove(product);
         fireTableDataChanged();
     }
 
-    public Object devolver(int rowIndex) {
+    public Object get(int rowIndex) {
         return this.rows.get(rowIndex);
     }
 
-    public void modificar(Product productViejo, Product productNuevo) {
+    public void edit(Product productViejo, Product productNuevo) {
         this.rows.remove(productViejo);
         this.rows.add(productNuevo);
         fireTableDataChanged();

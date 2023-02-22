@@ -63,7 +63,7 @@ public class CreateProduct extends javax.swing.JDialog {
                 radioNoTax = new javax.swing.JRadioButton();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-                setTitle("Add product");
+                setTitle("New product");
                 setMinimumSize(new java.awt.Dimension(380, 300));
                 setModal(true);
                 setResizable(false);
@@ -73,17 +73,17 @@ public class CreateProduct extends javax.swing.JDialog {
                         }
                 });
 
-                labelCode.setText("Código de barras");
+                labelCode.setText("Code");
 
-                labelName.setText("Nombre");
+                labelName.setText("Name");
 
-                labelPrice.setText("price");
+                labelPrice.setText("Price");
 
-                labelStock.setText("Stock actual");
+                labelStock.setText("Current Stock");
 
-                labelStockMin.setText("Stock mínimo");
+                labelStockMin.setText("Minimun Stock");
 
-                labelStockMax.setText("Stock máximo");
+                labelStockMax.setText("Maximun Stock");
 
                 error.setForeground(new java.awt.Color(255, 0, 0));
 
@@ -119,14 +119,14 @@ public class CreateProduct extends javax.swing.JDialog {
                 });
 
                 buttonGroup.add(radioTaxHight);
-                radioTaxHight.setText("Tax alto");
+                radioTaxHight.setText("Hight Tax");
 
                 buttonGroup.add(radioTaxLow);
-                radioTaxLow.setText("Tax bajo");
+                radioTaxLow.setText("Low Tax");
 
                 buttonGroup.add(radioNoTax);
                 radioNoTax.setSelected(true);
-                radioNoTax.setText("Sin Tax");
+                radioNoTax.setText("No Tax");
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);

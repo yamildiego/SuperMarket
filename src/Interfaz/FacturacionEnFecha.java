@@ -59,7 +59,7 @@ public class FacturacionEnFecha extends javax.swing.JDialog {
                         }
                 });
 
-                salir.setText("Cerrar");
+                salir.setText("Close");
                 salir.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 salirActionPerformed(evt);

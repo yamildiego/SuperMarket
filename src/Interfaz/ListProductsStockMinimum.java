@@ -57,7 +57,7 @@ public class ListProductsStockMinimum extends javax.swing.JDialog {
             }
         });
 
-        btnCancel.setText("Cerrar");
+        btnCancel.setText("Close");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);

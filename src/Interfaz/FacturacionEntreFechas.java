@@ -46,7 +46,7 @@ public class FacturacionEntreFechas extends javax.swing.JDialog {
                 salir = new javax.swing.JButton();
                 calcular = new javax.swing.JButton();
 
-                setTitle("Facturación entre dates");
+                setTitle("Billing between two dates");
                 setResizable(false);
                 addWindowListener(new java.awt.event.WindowAdapter() {
                         public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -54,9 +54,9 @@ public class FacturacionEntreFechas extends javax.swing.JDialog {
                         }
                 });
 
-                labelFechaDesde.setText("Fecha desde");
+                labelFechaDesde.setText("Date from");
 
-                labelFechaHasta.setText("Fecha hasta");
+                labelFechaHasta.setText("Date until");
 
                 dateDesde.setCurrentView(new datechooser.view.appearance.AppearancesList("Light",
                                 new datechooser.view.appearance.ViewAppearance("custom",
@@ -158,13 +158,13 @@ public class FacturacionEntreFechas extends javax.swing.JDialog {
                 dateHasta.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
 
                 labelTotal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-                labelTotal.setText("Total facturado: $");
+                labelTotal.setText("Total billed: $");
 
                 total.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
                 error.setForeground(java.awt.Color.red);
 
-                salir.setText("Cerrar");
+                salir.setText("Close");
                 salir.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 salirActionPerformed(evt);
@@ -279,7 +279,7 @@ public class FacturacionEntreFechas extends javax.swing.JDialog {
         private void calcularActionPerformed(java.awt.event.ActionEvent evt) {
                 if (this.dateDesde.getCurrent().getTime().getTime() > this.dateHasta.getCurrent().getTime()
                                 .getTime()) {
-                        this.error.setText("El campo date desde debe ser menor que el campo date hasta.");
+                        this.error.setText("The date from field must be less than the date to field.");
                         return;
                 }
                 this.error.setText(null);

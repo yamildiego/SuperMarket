@@ -53,7 +53,7 @@ public class StockProduct extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
-        setTitle("Actualizar stock");
+        setTitle("Update Stock");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -62,7 +62,7 @@ public class StockProduct extends javax.swing.JDialog {
             }
         });
 
-        btnAccept.setText("Aceptar");
+        btnAccept.setText("Accept");
         btnAccept.setEnabled(false);
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,13 +98,13 @@ public class StockProduct extends javax.swing.JDialog {
 
         labelError.setForeground(new java.awt.Color(255, 0, 0));
 
-        jLabel1.setText("Código de barras");
+        jLabel1.setText("Code");
 
-        jLabel2.setText("Stock actual");
+        jLabel2.setText("Current Stock");
 
-        jLabel3.setText("Stock entrante");
+        jLabel3.setText("Incoming Stock");
 
-        jLabel4.setText("Nombre");
+        jLabel4.setText("Name");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -204,20 +204,20 @@ public class StockProduct extends javax.swing.JDialog {
     private void codeFocusLost(java.awt.event.FocusEvent evt) {
         if (this.code.getText() == null || this.code.getText().equals("")) {
             this.nombreProduct.setText(null);
-            this.labelError.setText("El campo código es requerido.");
+            this.labelError.setText("The code field is required.");
             this.btnAccept.setEnabled(false);
             return;
         }
         String codeText = this.code.getText();
         if (codeText.equals("")) {
-            this.labelError.setText("El campo Codigo es requerido");
+            this.labelError.setText("The code field is required.");
             this.btnAccept.setEnabled(false);
             return;
         }
         int code = Integer.parseInt(codeText);
         this.product = ControllerProducts.getInstance().findProduct(code);
         if ((this.product == null)) {
-            this.labelError.setText("No se encontro un Product con el code indicado.");
+            this.labelError.setText("No product found with the code entered.");
             this.btnAccept.setEnabled(false);
             return;
         } else {
@@ -244,11 +244,12 @@ public class StockProduct extends javax.swing.JDialog {
                 this.labelError.setText("No se encontro un Product con el code indicado.");
             } else {
                 if (stock <= 0) {
-                    this.labelError.setText("El campo Stock Entrante debe ser mayor a 0.");
+                    this.labelError.setText("The Incoming Stock field must be greater than Zero.");
                     return;
                 }
                 if ((this.product.getStockMax() - stock - stockActual) < 0) {
-                    this.labelError.setText("El campo Stock Entrante mas el Stock Actual superan el stock permitido.");
+                    this.labelError
+                            .setText("The Incoming Stock field plus Current Stock exceed the allowed stock.");
                     return;
                 } else {
                     ControllerProducts.getInstance().updateProduct(code, stock + stockActual);
@@ -256,10 +257,10 @@ public class StockProduct extends javax.swing.JDialog {
                 doClose(RET_CANCEL);
             }
             if (stockText.equals("")) {
-                this.labelError.setText("El campo Stock Entrante es requerido");
+                this.labelError.setText("The Incoming Stock field is required.");
             }
             if (codeText.equals("")) {
-                this.labelError.setText("El campo Codigo es requerido");
+                this.labelError.setText("The code field is required.");
             }
         } catch (NumberFormatException nfe) {
             this.labelError.setText("Supera el maximo permitido.");

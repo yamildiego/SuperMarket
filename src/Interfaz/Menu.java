@@ -40,7 +40,7 @@ public class Menu extends javax.swing.JFrame {
 
         menuProducts.setText("Products");
 
-        agregarProduct.setText("Create new product");
+        agregarProduct.setText("New product");
         agregarProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addProductActionPerformed(evt);

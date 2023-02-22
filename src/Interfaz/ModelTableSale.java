@@ -74,17 +74,17 @@ public class ModelTableSale extends AbstractTableModel {
         return line;
     }
 
-    public void agregar(Line line) {
+    public void add(Line line) {
         this.rows.add(line);
         fireTableDataChanged();
     }
 
-    public void quitar(Line line) {
+    public void remove(Line line) {
         this.rows.remove(line);
         fireTableDataChanged();
     }
 
-    public Object devolver(int rowIndex) {
+    public Object get(int rowIndex) {
         return this.rows.get(rowIndex);
     }
 
@@ -92,7 +92,7 @@ public class ModelTableSale extends AbstractTableModel {
         return this.rows;
     }
 
-    public void modificar(Line oldLine, Line newLine) {
+    public void edit(Line oldLine, Line newLine) {
         this.rows.remove(oldLine);
         this.rows.add(newLine);
         fireTableDataChanged();
