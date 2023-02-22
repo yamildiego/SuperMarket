@@ -8,12 +8,12 @@ import javax.swing.*;
 
 import Controllers.ControllerSales;
 
-public class FacturacionEntreFechas extends javax.swing.JDialog {
+public class BillingBetweenTwoDates extends javax.swing.JDialog {
 
         public static final int RET_CANCEL = 0;
         public static final int RET_OK = 1;
 
-        public FacturacionEntreFechas(java.awt.Frame parent, boolean modal) {
+        public BillingBetweenTwoDates(java.awt.Frame parent, boolean modal) {
                 super(parent, modal);
                 initComponents();
                 this.setLocationRelativeTo(parent);
@@ -44,9 +44,9 @@ public class FacturacionEntreFechas extends javax.swing.JDialog {
                 total = new javax.swing.JLabel();
                 error = new javax.swing.JLabel();
                 salir = new javax.swing.JButton();
-                calcular = new javax.swing.JButton();
+                btnCalculate = new javax.swing.JButton();
 
-                setTitle("Billing between two dates");
+                setTitle("Billing Between Two Dates");
                 setResizable(false);
                 addWindowListener(new java.awt.event.WindowAdapter() {
                         public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -171,10 +171,10 @@ public class FacturacionEntreFechas extends javax.swing.JDialog {
                         }
                 });
 
-                calcular.setText("Calculate");
-                calcular.addActionListener(new java.awt.event.ActionListener() {
+                btnCalculate.setText("Calculate");
+                btnCalculate.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                calcularActionPerformed(evt);
+                                btnCalculateActionPerformed(evt);
                         }
                 });
 
@@ -219,7 +219,7 @@ public class FacturacionEntreFechas extends javax.swing.JDialog {
                                                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
                                                                                                 layout.createSequentialGroup()
                                                                                                                 .addGap(0, 0, Short.MAX_VALUE)
-                                                                                                                .addComponent(calcular)
+                                                                                                                .addComponent(btnCalculate)
                                                                                                                 .addPreferredGap(
                                                                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                                                                 .addComponent(salir)))
@@ -268,15 +268,15 @@ public class FacturacionEntreFechas extends javax.swing.JDialog {
                                                                 .addGroup(layout.createParallelGroup(
                                                                                 javax.swing.GroupLayout.Alignment.BASELINE)
                                                                                 .addComponent(salir)
-                                                                                .addComponent(calcular))
+                                                                                .addComponent(btnCalculate))
                                                                 .addContainerGap()));
 
-                getRootPane().setDefaultButton(calcular);
+                getRootPane().setDefaultButton(btnCalculate);
 
                 pack();
         }
 
-        private void calcularActionPerformed(java.awt.event.ActionEvent evt) {
+        private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {
                 if (this.dateDesde.getCurrent().getTime().getTime() > this.dateHasta.getCurrent().getTime()
                                 .getTime()) {
                         this.error.setText("The date from field must be less than the date to field.");
@@ -303,7 +303,7 @@ public class FacturacionEntreFechas extends javax.swing.JDialog {
                 dispose();
         }
 
-        private javax.swing.JButton calcular;
+        private javax.swing.JButton btnCalculate;
         private javax.swing.JLabel error;
         private datechooser.beans.DateChooserCombo dateDesde;
         private datechooser.beans.DateChooserCombo dateHasta;

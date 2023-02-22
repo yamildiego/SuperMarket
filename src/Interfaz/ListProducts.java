@@ -43,7 +43,7 @@ public class ListProducts extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProducts = new javax.swing.JTable();
 
-        setTitle("Product list");
+        setTitle("Product List");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {

@@ -12,13 +12,13 @@ import javax.swing.KeyStroke;
 import Controllers.ControllerProducts;
 import Model.Product;
 
-public class ListProductsStockMinimum extends javax.swing.JDialog {
+public class ProductsWithLowStock extends javax.swing.JDialog {
 
     private ModelTableProduct model;
     public static final int RET_CANCEL = 0;
     public static final int RET_OK = 1;
 
-    public ListProductsStockMinimum(java.awt.Frame parent, boolean modal) {
+    public ProductsWithLowStock(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.model = new ModelTableProduct(
                 (ArrayList<Product>) ControllerProducts.getInstance().listProductsStockLowMinimum());
@@ -49,7 +49,7 @@ public class ListProductsStockMinimum extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductsStockMin = new javax.swing.JTable();
 
-        setTitle("Products con stock bajo mínimo");
+        setTitle("Products With Low Stock");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {

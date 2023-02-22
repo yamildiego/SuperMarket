@@ -10,14 +10,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.*;
 
-public class RegistrarVenta extends javax.swing.JDialog {
+public class NewSale extends javax.swing.JDialog {
 
     private ModelTableSale modelo;
     private double totalTotal = 0;
     public static final int RET_CANCEL = 0;
     public static final int RET_OK = 1;
 
-    public RegistrarVenta(java.awt.Frame parent, boolean modal) {
+    public NewSale(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.modelo = new ModelTableSale();
         initComponents();
@@ -36,10 +36,10 @@ public class RegistrarVenta extends javax.swing.JDialog {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                int opcion = JOptionPane.showConfirmDialog(RegistrarVenta.this, "¿Seguro desea btnCancel la sale?",
-                        "Advertencia", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+                int opcion = JOptionPane.showConfirmDialog(NewSale.this, "Are you sure you want to cancel the sale?",
+                        "Attention", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
                 if (JOptionPane.YES_OPTION == opcion) {
-                    ControllerSales.getInstance().cancelSale(RegistrarVenta.this.modelo.devolverLista());
+                    ControllerSales.getInstance().cancelSale(NewSale.this.modelo.devolverLista());
                     doClose(RET_CANCEL);
                 }
             }
@@ -69,7 +69,7 @@ public class RegistrarVenta extends javax.swing.JDialog {
         total = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Registrar sale");
+        setTitle("New Sale");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -98,14 +98,14 @@ public class RegistrarVenta extends javax.swing.JDialog {
             }
         });
 
-        btnDelete.setText("btnDelete");
+        btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
 
-        labelDate.setText("Cashier date");
+        labelDate.setText("Date");
 
         date.setEditable(false);
         date.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -185,7 +185,7 @@ public class RegistrarVenta extends javax.swing.JDialog {
     }
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {
-        int opcion = JOptionPane.showConfirmDialog(this, "¿Seguro desea btnCancel la sale?", "Advertencia",
+        int opcion = JOptionPane.showConfirmDialog(this, "Are you sure you want to cancel the sale?", "Attention",
                 JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
         if (JOptionPane.YES_OPTION == opcion) {
             ControllerSales.getInstance().cancelSale(this.modelo.devolverLista());
@@ -194,7 +194,7 @@ public class RegistrarVenta extends javax.swing.JDialog {
     }
 
     private void closeDialog(java.awt.event.WindowEvent evt) {
-        int opcion = JOptionPane.showConfirmDialog(this, "¿Seguro desea btnCancel la sale?", "Advertencia",
+        int opcion = JOptionPane.showConfirmDialog(this, "Are you sure you want to cancel the sale?", "Attention",
                 JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
         if (JOptionPane.YES_OPTION == opcion) {
             ControllerSales.getInstance().cancelSale(this.modelo.devolverLista());
@@ -216,7 +216,8 @@ public class RegistrarVenta extends javax.swing.JDialog {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {
         if (this.tablaLines.getSelectedRow() != -1) {
-            int opcion = JOptionPane.showConfirmDialog(this, "¿Seguro desea quitar el product?", "Advertencia",
+            int opcion = JOptionPane.showConfirmDialog(this, "Are you sure you want to remove the product?",
+                    "Attention",
                     JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (JOptionPane.YES_OPTION == opcion) {
                 Line line = (Line) this.modelo.get(this.tablaLines.getSelectedRow());

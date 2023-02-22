@@ -40,7 +40,7 @@ public class Menu extends javax.swing.JFrame {
 
         menuProducts.setText("Products");
 
-        agregarProduct.setText("New product");
+        agregarProduct.setText("New Product");
         agregarProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addProductActionPerformed(evt);
@@ -48,7 +48,7 @@ public class Menu extends javax.swing.JFrame {
         });
         menuProducts.add(agregarProduct);
 
-        listProducts.setText("Product list");
+        listProducts.setText("Product List");
         listProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listProductsActionPerformed(evt);
@@ -56,7 +56,7 @@ public class Menu extends javax.swing.JFrame {
         });
         menuProducts.add(listProducts);
 
-        updateStock.setText("Update stock");
+        updateStock.setText("Update Stock");
         updateStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateStockActionPerformed(evt);
@@ -68,7 +68,7 @@ public class Menu extends javax.swing.JFrame {
 
         menuSales.setText("Sales");
 
-        registrarSale.setText("New sale");
+        registrarSale.setText("New Sale");
         registrarSale.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrarSaleActionPerformed(evt);
@@ -80,7 +80,7 @@ public class Menu extends javax.swing.JFrame {
 
         menuReportes.setText("Reports");
 
-        facturacionFecha.setText("Billing by date");
+        facturacionFecha.setText("Billing By Date");
         facturacionFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 facturacionFechaActionPerformed(evt);
@@ -88,7 +88,7 @@ public class Menu extends javax.swing.JFrame {
         });
         menuReportes.add(facturacionFecha);
 
-        facturacionEntreFechas.setText("Billing between dates");
+        facturacionEntreFechas.setText("Billing Between Dates");
         facturacionEntreFechas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 facturacionEntreFechasActionPerformed(evt);
@@ -96,7 +96,7 @@ public class Menu extends javax.swing.JFrame {
         });
         menuReportes.add(facturacionEntreFechas);
 
-        ProductsBajoStock.setText("Products with low stock");
+        ProductsBajoStock.setText("Products With Low Stock");
         ProductsBajoStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProductsBajoStockActionPerformed(evt);
@@ -104,7 +104,7 @@ public class Menu extends javax.swing.JFrame {
         });
         menuReportes.add(ProductsBajoStock);
 
-        ProductMayorRecaudacion.setText("Product with the highest grossing");
+        ProductMayorRecaudacion.setText("Product With The Highest Grossing");
         ProductMayorRecaudacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProductMayorRecaudacionActionPerformed(evt);
@@ -139,27 +139,27 @@ public class Menu extends javax.swing.JFrame {
     }
 
     private void updateStockActionPerformed(java.awt.event.ActionEvent evt) {
-        new StockProduct(this, true).setVisible(true);
+        new UpdateStock(this, true).setVisible(true);
     }
 
     private void registrarSaleActionPerformed(java.awt.event.ActionEvent evt) {
-        new RegistrarVenta(this, true).setVisible(true);
+        new NewSale(this, true).setVisible(true);
     }
 
     private void facturacionFechaActionPerformed(java.awt.event.ActionEvent evt) {
-        new FacturacionEnFecha(this, true).setVisible(true);
+        new BillingByDate(this, true).setVisible(true);
     }
 
     private void facturacionEntreFechasActionPerformed(java.awt.event.ActionEvent evt) {
-        new FacturacionEntreFechas(this, true).setVisible(true);
+        new BillingBetweenTwoDates(this, true).setVisible(true);
     }
 
     private void ProductsBajoStockActionPerformed(java.awt.event.ActionEvent evt) {
-        new ListProductsStockMinimum(this, true).setVisible(true);
+        new ProductsWithLowStock(this, true).setVisible(true);
     }
 
     private void ProductMayorRecaudacionActionPerformed(java.awt.event.ActionEvent evt) {//
-        new ReportProductRecaudadoEnFecha(this, true).setVisible(true);
+        new ProductsWithTheHighestRevenueByDate(this, true).setVisible(true);
     }
 
     private javax.swing.JMenuItem ProductMayorRecaudacion;

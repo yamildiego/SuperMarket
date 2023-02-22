@@ -63,7 +63,7 @@ public class CreateProduct extends javax.swing.JDialog {
                 radioNoTax = new javax.swing.JRadioButton();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-                setTitle("New product");
+                setTitle("New Product");
                 setMinimumSize(new java.awt.Dimension(380, 300));
                 setModal(true);
                 setResizable(false);

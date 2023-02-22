@@ -11,13 +11,13 @@ import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
-public class StockProduct extends javax.swing.JDialog {
+public class UpdateStock extends javax.swing.JDialog {
 
     Product product = null;
     public static final int RET_CANCEL = 0;
     public static final int RET_OK = 1;
 
-    public StockProduct(java.awt.Frame parent, boolean modal) {
+    public UpdateStock(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(parent);
