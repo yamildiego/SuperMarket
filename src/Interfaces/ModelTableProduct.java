@@ -1,9 +1,9 @@
-package Interfaz;
+package Interfaces;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-import Model.Product;
+import Models.Product;
 
 /**
  *

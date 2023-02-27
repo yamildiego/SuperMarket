@@ -3,8 +3,8 @@ package Controllers;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Product;
-import Model.Tax;
+import Models.Product;
+import Models.Tax;
 
 public class ControllerProducts {
 
@@ -26,9 +26,8 @@ public class ControllerProducts {
         Product aux = null;
         for (Product i : this.listProducts) {
             if (i != null) {
-                if (i.getCode() == code) {
+                if (i.getCode() == code)
                     aux = i;
-                }
             }
         }
         return aux;

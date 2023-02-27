@@ -1,9 +1,9 @@
-package Interfaz;
+package Interfaces;
 
 import Controllers.ControllerProducts;
-import Model.Tax;
-import Model.TaxNational;
-import Model.TaxState;
+import Models.Tax;
+import Models.TaxNational;
+import Models.TaxState;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;

@@ -1,6 +1,6 @@
 package Controllers;
 
-import Interfaz.Menu;
+import Interfaces.Menu;
 
 public class App {
     public App() {

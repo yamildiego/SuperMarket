@@ -1,9 +1,9 @@
-package Interfaz;
+package Interfaces;
 
 import Controllers.ControllerProducts;
 import Controllers.ControllerSales;
-import Model.Line;
-import Model.Product;
+import Models.Line;
+import Models.Product;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;

@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import Model.Line;
-import Model.Product;
-import Model.Sale;
-import Model.Tax;
+import Models.Line;
+import Models.Product;
+import Models.Sale;
+import Models.Tax;
 
 public class ControllerSales {
 

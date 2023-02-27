@@ -1,4 +1,4 @@
-package Interfaz;
+package Interfaces;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -10,23 +10,21 @@ import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
 import Controllers.ControllerProducts;
-import Model.Product;
+import Models.Product;
 
-public class ProductsWithLowStock extends javax.swing.JDialog {
+public class ListProducts extends javax.swing.JDialog {
 
     private ModelTableProduct model;
     public static final int RET_CANCEL = 0;
     public static final int RET_OK = 1;
 
-    public ProductsWithLowStock(java.awt.Frame parent, boolean modal) {
+    public ListProducts(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.model = new ModelTableProduct(
-                (ArrayList<Product>) ControllerProducts.getInstance().listProductsStockLowMinimum());
+        this.model = new ModelTableProduct((ArrayList<Product>) ControllerProducts.getInstance().listProducts());
         initComponents();
-        this.tablaProductsStockMin.getTableHeader().setReorderingAllowed(false);
+        this.tablaProducts.getTableHeader().setReorderingAllowed(false);
         this.setLocationRelativeTo(parent);
 
-        // Close the dialog when Esc is pressed
         String cancelName = "cancel";
         InputMap inputMap = getRootPane().getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
         inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), cancelName);
@@ -39,17 +37,13 @@ public class ProductsWithLowStock extends javax.swing.JDialog {
         });
     }
 
-    public int getReturnStatus() {
-        return returnStatus;
-    }
-
     private void initComponents() {
 
         btnCancel = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaProductsStockMin = new javax.swing.JTable();
+        tablaProducts = new javax.swing.JTable();
 
-        setTitle("Products With Low Stock");
+        setTitle("Product List");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -64,8 +58,9 @@ public class ProductsWithLowStock extends javax.swing.JDialog {
             }
         });
 
-        tablaProductsStockMin.setModel(this.model);
-        jScrollPane1.setViewportView(tablaProductsStockMin);
+        tablaProducts.setModel(this.model);
+        tablaProducts.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(tablaProducts);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,12 +77,13 @@ public class ProductsWithLowStock extends javax.swing.JDialog {
                                 .addContainerGap()));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnCancel)
-                                .addContainerGap()));
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
         pack();
     }
@@ -101,13 +97,11 @@ public class ProductsWithLowStock extends javax.swing.JDialog {
     }
 
     private void doClose(int retStatus) {
-        returnStatus = retStatus;
         setVisible(false);
         dispose();
     }
 
     private javax.swing.JButton btnCancel;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tablaProductsStockMin;
-    private int returnStatus = RET_CANCEL;
+    private javax.swing.JTable tablaProducts;
 }

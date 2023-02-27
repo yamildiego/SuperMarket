@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfaz;
+package Interfaces;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-import Model.Line;
+import Models.Line;
 
 /**
  *
